@@ -1,4 +1,5 @@
 local plugins = {
+  -- Debugger user interface setup
   {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
@@ -18,6 +19,7 @@ local plugins = {
       end
     end
   },
+  -- Debugger binary installation through Mason
   {
     "jay-babu/mason-nvim-dap.nvim",
     event = "VeryLazy",
@@ -35,8 +37,10 @@ local plugins = {
       require("core.utils").load_mappings("dap")
     end
   },
+  -- Null-ls setup
   {
     "jose-elias-alvarez/null-ls.nvim",
+    ft = {"python"},
     event = "VeryLazy",
     opts = function()
       return require "custom.configs.null-ls"
@@ -59,9 +63,15 @@ local plugins = {
 
       -- Debugger
       "codelldb",
-      }
-    }
-  }
+
+      -- Python
+      "pyright",
+      "mypy",
+      "ruff",
+      "black",
+      },
+    },
+  },
 }
 return plugins
 
