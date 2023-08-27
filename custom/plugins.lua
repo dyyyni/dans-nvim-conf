@@ -1,4 +1,9 @@
 local plugins = {
+  -- Tmux vim like keybindings
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
   -- Debugger user interface setup
   {
     "rcarriga/nvim-dap-ui",
